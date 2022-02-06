@@ -6,17 +6,28 @@
 //
 
 import UIKit
-import CoreML
+
+fileprivate let background = UIImage(named: "drawing")
 
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-
-        
     }
-
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        renderBackgroundImage()
+    }
 
 }
 
+extension ViewController {
+    private func renderBackgroundImage() {
+        guard let backgroundImage = background else  {
+            return
+        }
+        
+        self.view.backgroundColor = UIColor(patternImage: backgroundImage)
+    }
+}
