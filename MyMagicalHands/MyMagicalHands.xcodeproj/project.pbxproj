@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A83F62B327AFA5BD00D99D38 /* UIImage+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A83F62B227AFA5BD00D99D38 /* UIImage+.swift */; };
+		A88824B727E5E28200218E21 /* CanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88824B627E5E28200218E21 /* CanvasView.swift */; };
 		A8CE13AA27AE2A4900297A60 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8CE13A927AE2A4900297A60 /* AppDelegate.swift */; };
 		A8CE13AC27AE2A4900297A60 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8CE13AB27AE2A4900297A60 /* SceneDelegate.swift */; };
 		A8CE13AE27AE2A4900297A60 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8CE13AD27AE2A4900297A60 /* ViewController.swift */; };
@@ -17,6 +19,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A83F62B227AFA5BD00D99D38 /* UIImage+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+.swift"; sourceTree = "<group>"; };
+		A88824B627E5E28200218E21 /* CanvasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasView.swift; sourceTree = "<group>"; };
 		A8CE13A627AE2A4900297A60 /* MyMagicalHands.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyMagicalHands.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8CE13A927AE2A4900297A60 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A8CE13AB27AE2A4900297A60 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -59,10 +63,12 @@
 			isa = PBXGroup;
 			children = (
 				A8CE13A927AE2A4900297A60 /* AppDelegate.swift */,
+				A83F62B227AFA5BD00D99D38 /* UIImage+.swift */,
 				A8CE13BD27AE3FAF00297A60 /* Models */,
 				A8CE13AB27AE2A4900297A60 /* SceneDelegate.swift */,
 				A8CE13AD27AE2A4900297A60 /* ViewController.swift */,
 				A8CE13AF27AE2A4900297A60 /* Main.storyboard */,
+				A88824B627E5E28200218E21 /* CanvasView.swift */,
 				A8CE13B227AE2A4D00297A60 /* Assets.xcassets */,
 				A8CE13B427AE2A4D00297A60 /* LaunchScreen.storyboard */,
 				A8CE13B727AE2A4D00297A60 /* Info.plist */,
@@ -151,6 +157,8 @@
 			files = (
 				A8CE13AE27AE2A4900297A60 /* ViewController.swift in Sources */,
 				A8CE13AA27AE2A4900297A60 /* AppDelegate.swift in Sources */,
+				A88824B727E5E28200218E21 /* CanvasView.swift in Sources */,
+				A83F62B327AFA5BD00D99D38 /* UIImage+.swift in Sources */,
 				A8CE13AC27AE2A4900297A60 /* SceneDelegate.swift in Sources */,
 				A8CE13C127AE3FE800297A60 /* ImageModel_final.mlpackage in Sources */,
 			);
