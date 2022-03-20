@@ -42,6 +42,10 @@ class CanvasView: UIView {
         }
     }
     
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        cleanCanvas()
+    }
+    
     private func drawPathLayerLine() {
         let drawingLayer = CAShapeLayer()
         drawingLayer.path = self.path?.cgPath
@@ -53,6 +57,12 @@ class CanvasView: UIView {
         }
         
         self.layer.addSublayer(drawingLayer)
+        self.setNeedsDisplay()
+    }
+    
+    private func cleanCanvas() {
+        self.path?.removeAllPoints()
+        self.layer.sublayers = nil
         self.setNeedsDisplay()
     }
 }
