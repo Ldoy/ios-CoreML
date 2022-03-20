@@ -47,6 +47,7 @@ class CanvasView: UIView {
         drawingLayer.path = self.path?.cgPath
         if let lineColor = self.canvasColor,
            let lineWidth = self.lineWidth {
+            drawingLayer.lineCap = .round
             drawingLayer.strokeColor = lineColor.cgColor
             drawingLayer.lineWidth = lineWidth
             drawingLayer.fillColor = UIColor.clear.cgColor
