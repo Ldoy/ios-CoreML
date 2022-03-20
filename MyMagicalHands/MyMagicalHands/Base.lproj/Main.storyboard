@@ -26,9 +26,9 @@
                                 <buttonConfiguration key="configuration" style="tinted" title="Guess!"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T8e-Xy-A0x">
-                                <rect key="frame" x="20" y="611" width="72.5" height="31"/>
+                                <rect key="frame" x="20" y="611" width="61" height="31"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="tinted" title="Redraw"/>
+                                <buttonConfiguration key="configuration" style="tinted" title="Clean"/>
                                 <connections>
                                     <action selector="cleanCanvas:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dnR-R2-Kyl"/>
                                 </connections>
