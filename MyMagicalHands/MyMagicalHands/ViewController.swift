@@ -9,14 +9,16 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var canvasView: CanvasView!
+    @IBOutlet weak var guessShapeButton: UIButton!
+    
+    @IBAction func cleanCanvas(_ sender: Any) {
+        self.canvasView.cleanCanvas()
+        
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-    }
-
 }
 
 extension ViewController {
