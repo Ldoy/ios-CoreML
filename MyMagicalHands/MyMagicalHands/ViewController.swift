@@ -14,8 +14,8 @@ class ViewController: UIViewController {
     
     @IBAction func cleanCanvas(_ sender: Any) {
         self.canvasView.cleanCanvas()
-        
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
