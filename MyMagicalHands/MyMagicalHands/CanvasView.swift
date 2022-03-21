@@ -62,4 +62,18 @@ class CanvasView: UIView {
         self.layer.sublayers = nil
         self.setNeedsDisplay()
     }
+    
+    func captureCurrentCanvas() -> UIImage? {
+        UIGraphicsBeginImageContextWithOptions(self.frame.size,
+                                               layer.isOpaque, 0)
+        guard let context = UIGraphicsGetCurrentContext() else {
+            return nil
+        }
+        
+        self.layer.render(in: context)
+        let outputImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        return outputImage
+    }
 }

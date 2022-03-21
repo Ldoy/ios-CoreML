@@ -6,18 +6,33 @@
 //
 
 import UIKit
+import CoreML
+
+var images: [UIImage] = []
 
 class ViewController: UIViewController {
 
     @IBOutlet weak var canvasView: CanvasView!
     @IBOutlet weak var guessShapeButton: UIButton!
     
+    @IBOutlet weak var testImage: UIImageView!
     @IBAction func cleanCanvas(_ sender: Any) {
+        self.canvasView.cleanCanvas()
+    }
+    
+    @IBAction func guessShape(_ sender: Any) {
+        let output = self.canvasView.captureCurrentCanvas()
+        
+        if let outputImgae = output {
+            images.append(outputImgae)
+            self.testImage.image = outputImgae
+        }
         self.canvasView.cleanCanvas()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
     }
 }
 

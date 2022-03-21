@@ -2,11 +2,10 @@
   "MLModelVersionStringKey" : "1.0.0",
   "MLModelDescriptionKey" : "RecognizeCircleStarRectangleTryangle",
   "MLModelCreatorDefinedKey" : {
-    "com.apple.createml.app.tag" : "78.8",
     "com.apple.createml.version" : "12.1.0",
+    "com.apple.createml.app.tag" : "78.8",
     "com.apple.coreml.model.preview.type" : "imageClassifier",
     "com.apple.createml.app.version" : "3.0"
   },
-  "MLModelAuthorKey" : "Do Yi Lee",
-  "MLModelLicenseKey" : "--"
+  "MLModelAuthorKey" : "Do Yi Lee"
 }
