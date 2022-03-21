@@ -13,9 +13,9 @@ var images: [UIImage] = []
 class ViewController: UIViewController {
 
     @IBOutlet weak var canvasView: CanvasView!
-    @IBOutlet weak var guessShapeButton: UIButton!
-    
     @IBOutlet weak var testImage: UIImageView!
+    @IBOutlet weak var testResultRabel: UILabel!
+    
     @IBAction func cleanCanvas(_ sender: Any) {
         self.canvasView.cleanCanvas()
     }

@@ -36,10 +36,18 @@
                                     <action selector="cleanCanvas:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dnR-R2-Kyl"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uYA-WM-fvd">
-                                <rect key="frame" x="87" y="711" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="동그라미처럼 보이네요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fW2-qZ-H7Y">
+                                <rect key="frame" x="122.5" y="725" width="169.5" height="23"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                <color key="textColor" systemColor="tertiarySystemBackgroundColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KgM-Zg-6eI">
+                                <rect key="frame" x="188.5" y="770" width="37" height="17"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemGrayColor"/>
@@ -48,15 +56,19 @@
                             <constraint firstItem="zmf-VR-B3l" firstAttribute="firstBaseline" secondItem="T8e-Xy-A0x" secondAttribute="firstBaseline" id="6OT-AH-9sw"/>
                             <constraint firstItem="T8e-Xy-A0x" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="7t2-Nx-gzb"/>
                             <constraint firstItem="A5P-UK-GPO" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="48" id="97I-ml-Ibj"/>
+                            <constraint firstItem="KgM-Zg-6eI" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="EdP-J0-vyB"/>
                             <constraint firstItem="zmf-VR-B3l" firstAttribute="top" secondItem="A5P-UK-GPO" secondAttribute="bottom" constant="8" symbolic="YES" id="GKt-IO-EWY"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="zmf-VR-B3l" secondAttribute="trailing" constant="20" id="T5H-ME-5T5"/>
+                            <constraint firstItem="fW2-qZ-H7Y" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="T7j-lZ-aeG"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="fW2-qZ-H7Y" secondAttribute="bottom" constant="114" id="ddV-PM-D88"/>
+                            <constraint firstItem="KgM-Zg-6eI" firstAttribute="top" secondItem="fW2-qZ-H7Y" secondAttribute="bottom" constant="22" id="eIR-Uk-ira"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="A5P-UK-GPO" secondAttribute="bottom" constant="259" id="vB9-G0-K0D"/>
                             <constraint firstItem="A5P-UK-GPO" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="xQK-gZ-pfb"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="canvasView" destination="A5P-UK-GPO" id="KKV-Nh-QFh"/>
-                        <outlet property="testImage" destination="uYA-WM-fvd" id="nIn-LL-U5x"/>
+                        <outlet property="testResultRabel" destination="fW2-qZ-H7Y" id="dkg-an-xqt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -70,6 +82,9 @@
         </systemColor>
         <systemColor name="systemGrayColor">
             <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="tertiarySystemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
     </resources>
 </document>
