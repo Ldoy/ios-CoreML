@@ -45,6 +45,7 @@ class CanvasView: UIView {
     private func drawPathLayerLine() {
         let drawingLayer = CAShapeLayer()
         drawingLayer.path = self.path?.cgPath
+        
         if let lineColor = self.canvasColor,
            let lineWidth = self.lineWidth {
             drawingLayer.lineCap = .round
@@ -63,9 +64,10 @@ class CanvasView: UIView {
         self.setNeedsDisplay()
     }
     
-    func captureCurrentCanvas() -> UIImage? {
+    func captureCurrentCanvas() -> CGImage? {
         UIGraphicsBeginImageContextWithOptions(self.frame.size,
                                                layer.isOpaque, 0)
+        
         guard let context = UIGraphicsGetCurrentContext() else {
             return nil
         }
@@ -74,6 +76,25 @@ class CanvasView: UIView {
         let outputImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         
-        return outputImage
+        if let output = outputImage {
+            return output.convert()
+        } else {
+            return nil
+        }
     }
 }
+
+extension UIImage {
+    func convert() -> CGImage? {
+        guard let ciimage = CIImage(image: self) else {
+            return nil
+        }
+        
+        let context = CIContext()
+        let cgImage = context.createCGImage(ciimage , from: ciimage.extent)
+        return cgImage
+    }
+}
+
+
+// undo 매니저

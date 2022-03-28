@@ -8,12 +8,12 @@
 import UIKit
 import CoreML
 
-var images: [UIImage] = []
+var drawing: [CGImage] = []
+var result: [String : Double] = [:]
 
 class ViewController: UIViewController {
 
     @IBOutlet weak var canvasView: CanvasView!
-    @IBOutlet weak var testImage: UIImageView!
     @IBOutlet weak var testResultRabel: UILabel!
     
     @IBAction func cleanCanvas(_ sender: Any) {
@@ -21,21 +21,43 @@ class ViewController: UIViewController {
     }
     
     @IBAction func guessShape(_ sender: Any) {
-        let output = self.canvasView.captureCurrentCanvas()
+        let currentCanvas = self.canvasView.captureCurrentCanvas()
         
-        if let outputImgae = output {
-            images.append(outputImgae)
-            self.testImage.image = outputImgae
+        if let outputImage = currentCanvas {
+            drawing.append(outputImage)
         }
+        
+        self.predictImage()
+        
+        let answer = result.filter { element in
+            return element.value >= 1.0
+        }
+        
+        testResultRabel.text = "\(answer.keys.first)처럼 보이네요"
+      
         self.canvasView.cleanCanvas()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
     }
 }
 
 extension ViewController {
-
+    private func predictImage() {
+        let configuration = MLModelConfiguration()
+        do {
+            let model = try ShapDetector(configuration: configuration)
+            
+            guard let latestDrawing = drawing.last else {
+                return
+            }
+            
+            let input = try ShapDetectorInput(imageWith: latestDrawing)
+            let output = try model.prediction(input: input)
+            result = output.class_
+        } catch(let error) {
+            print(error.localizedDescription)
+        }
+    }
 }
