@@ -32,8 +32,8 @@ class ViewController: UIViewController {
         let answer = result.filter { element in
             return element.value >= 1.0
         }
-        
-        testResultRabel.text = "\(answer.keys.first)처럼 보이네요"
+        print(answer.keys)
+        testResultRabel.text = "\(answer.keys.first ?? "다시 그리셔야 할 것")처럼 보이네요"
       
         self.canvasView.cleanCanvas()
     }

@@ -7,6 +7,10 @@
 
 import UIKit
 
+enum CanvasViewLineWidth: Double {
+    case medium = 20.0
+}
+
 class CanvasView: UIView {
     var canvasColor: UIColor?
     var lineWidth: CGFloat?
@@ -18,9 +22,8 @@ class CanvasView: UIView {
         self.clipsToBounds = true
         self.isMultipleTouchEnabled = false
         
-        let mediumLineWidth = 10.0
         self.canvasColor = UIColor.black
-        self.lineWidth = mediumLineWidth
+        self.lineWidth = CanvasViewLineWidth.medium.rawValue
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
